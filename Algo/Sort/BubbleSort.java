@@ -1,12 +1,12 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class SelectionSort{
+public class BubbleSort{
 
 	public int n;
 	public int[] intArray;
 	
-	public SelectionSort(){
+	public BubbleSort(){
 		n = 0;
 	}
 
@@ -29,36 +29,29 @@ public class SelectionSort{
 	}
 
 	public void sort(){
-		int ss,sn,temp;
 		for(int i = 0 ; i < n-1; i++){
-			ss = intArray[i];
-			sn = i;
-
-			for(int j=i+1  ; j< n; j++){
-				if(intArray[j] < ss){
-					ss =intArray[j];
-					sn = j;
+			for(int j=0  ; j< n-1-i; j++){
+				if(intArray[j] < intArray[j+1]){
+					int temp = intArray[j];
+					intArray[j] = intArray[j+1];
+					intArray[j+1] =temp;	
 				}
 			}
-
-			temp = intArray[i];
-			intArray[i] = intArray[sn];
-			intArray[sn] =temp;	
 		}
 	}
 	public static void main(String[] args){
 
-		SelectionSort selectionSort = new SelectionSort();
+		BubbleSort bubbleSort = new BubbleSort();
 		
-		selectionSort.accept();
+		bubbleSort.accept();
 		
 		System.out.println("The contents of the array : ");
-		selectionSort.display();
+		bubbleSort.display();
 
-		System.out.println("Sorting... ");
-		selectionSort.sort();
+		System.out.println("\n Sorting... ");
+		bubbleSort.sort();
 
 		System.out.println("The sorted contents of the array : ");
-		selectionSort.display();
+		bubbleSort.display();
 	}
 }

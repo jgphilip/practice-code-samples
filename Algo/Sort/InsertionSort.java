@@ -1,12 +1,12 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class SelectionSort{
+public class InsertionSort{
 
 	public int n;
 	public int[] intArray;
 	
-	public SelectionSort(){
+	public InsertionSort(){
 		n = 0;
 	}
 
@@ -29,36 +29,30 @@ public class SelectionSort{
 	}
 
 	public void sort(){
-		int ss,sn,temp;
-		for(int i = 0 ; i < n-1; i++){
-			ss = intArray[i];
-			sn = i;
-
-			for(int j=i+1  ; j< n; j++){
-				if(intArray[j] < ss){
-					ss =intArray[j];
-					sn = j;
-				}
+		int key,j;
+		for(int i = 1 ; i < n; i++){
+			j=i;
+			while( j > 0 && intArray[j] < intArray[j-1]){
+				key = intArray[j];
+				intArray[j] = intArray[j-1];
+				intArray[j-1] =key;	
+				j--;
 			}
-
-			temp = intArray[i];
-			intArray[i] = intArray[sn];
-			intArray[sn] =temp;	
 		}
 	}
 	public static void main(String[] args){
 
-		SelectionSort selectionSort = new SelectionSort();
+		InsertionSort insertionSort = new InsertionSort();
 		
-		selectionSort.accept();
+		insertionSort.accept();
 		
 		System.out.println("The contents of the array : ");
-		selectionSort.display();
+		insertionSort.display();
 
-		System.out.println("Sorting... ");
-		selectionSort.sort();
+		System.out.println("\n Sorting... ");
+		insertionSort.sort();
 
 		System.out.println("The sorted contents of the array : ");
-		selectionSort.display();
+		insertionSort.display();
 	}
 }
