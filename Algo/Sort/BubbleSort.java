@@ -40,6 +40,11 @@ public class BubbleSort{
 					intArray[j+1] =temp;	
 				}
 			}
+			for(int m =0; m < n; m++){
+				System.out.print(intArray[m] + " ");
+			}
+			System.out.print("\n");
+			
 		}
 	}
 	public static void main(String[] args){
