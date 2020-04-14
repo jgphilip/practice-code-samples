@@ -13,9 +13,10 @@ public class QuickSort {
         n = 0;
     }
 
-    public int getN(){
+    public int getN() {
         return n;
     }
+
     public void accept() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array : ");
