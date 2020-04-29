@@ -13,7 +13,7 @@ public class BubbleSort {
 	}
 
 	public void accept() {
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the size of the array : ");
 		n = sc.nextInt();
 
